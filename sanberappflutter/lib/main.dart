@@ -1,5 +1,9 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
-import 'package:sanberappflutter/Tugas/Tugas9/Telegram.dart';
+import 'package:sanberappflutter/Tugas/Tugas10/HomeScreen.dart';
+import 'package:sanberappflutter/Tugas/Tugas10/LoginScreen.dart';
+// import 'package:sanberappflutter/Tugas/Tugas9/Telegram.dart';
 
 void main() {
   runApp(const MyApp());
@@ -8,16 +12,16 @@ void main() {
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
 
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'SanberApp',
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF5E73E1)),
         useMaterial3: true,
       ),
-      home: const Telegram(),
+      debugShowCheckedModeBanner: false,
+      home: const LoginScreen(),
     );
   }
 }
