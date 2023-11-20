@@ -1,9 +1,8 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
-import 'package:sanberappflutter/Tugas/Tugas10/HomeScreen.dart';
-import 'package:sanberappflutter/Tugas/Tugas10/LoginScreen.dart';
-// import 'package:sanberappflutter/Tugas/Tugas9/Telegram.dart';
+import 'package:sanberappflutter/Tugas/Tugas11/LoginScreen.dart';
+import 'package:sanberappflutter/Tugas/Tugas11/Routes.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,6 +20,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
+      onGenerateRoute: RouteGenerator.generateRoute,
       home: const LoginScreen(),
     );
   }
