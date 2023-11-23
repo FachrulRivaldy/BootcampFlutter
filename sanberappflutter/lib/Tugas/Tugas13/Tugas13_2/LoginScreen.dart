@@ -24,11 +24,10 @@ class _LoginScreenState extends State<LoginScreen> {
       await _auth.createUserWithEmailAndPassword(
           email: _emailController.text.toString().trim(),
           password: _passwordController.text);
+      showSnackBar("Register Success");
     } catch (e) {
       print(e);
-      SnackBar(
-        content: Text(e.toString()),
-      );
+      showSnackBar(e.toString());
     }
   }
 
@@ -41,10 +40,16 @@ class _LoginScreenState extends State<LoginScreen> {
               MaterialPageRoute(builder: (context) => const HomeScreen())));
     } catch (e) {
       print(e);
-      SnackBar(
-        content: Text(e.toString()),
-      );
+      showSnackBar(e.toString());
     }
+  }
+
+  void showSnackBar(String message) {
+    ScaffoldMessenger.of(context).showSnackBar(
+      SnackBar(
+        content: Text(message),
+      ),
+    );
   }
 
   @override
@@ -74,6 +79,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 20,
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.emailAddress,
                     controller: _emailController,
                     decoration: InputDecoration(
                       prefixIcon: const Icon(
@@ -90,6 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                     height: 20,
                   ),
                   TextFormField(
+                    keyboardType: TextInputType.visiblePassword,
                     controller: _passwordController,
                     obscureText: !_passwordVisible,
                     decoration: InputDecoration(
