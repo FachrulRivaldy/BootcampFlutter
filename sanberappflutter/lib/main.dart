@@ -1,15 +1,22 @@
 // ignore_for_file: unused_import
 
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get/get.dart';
+import 'package:sanberappflutter/Tugas/Tugas14/Tugas14_1/GetX/counter_screen.dart';
+import 'package:sanberappflutter/Tugas/Tugas14/Tugas14_1/Obx/home.dart';
+import 'package:sanberappflutter/Tugas/Tugas14/get_data_screen.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
-import 'package:sanberappflutter/Tugas/Tugas13/Tugas13_2/LoginScreen.dart';
 
-Future<void> main() async {
-  WidgetsFlutterBinding.ensureInitialized();
-  await Firebase.initializeApp(
-    options: DefaultFirebaseOptions.currentPlatform,
-  );
+// Future<void> main() async {
+//   WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp(
+//     options: DefaultFirebaseOptions.currentPlatform,
+//   );
+//   runApp(const MyApp());
+// }
+
+void main() {
   runApp(const MyApp());
 }
 
@@ -18,14 +25,14 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       title: 'SanberApp',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xFF5E73E1)),
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const LoginScreen(),
+      home: const HomeScreen(),
     );
   }
 }
