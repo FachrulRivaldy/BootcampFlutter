@@ -1,9 +1,15 @@
 // ignore_for_file: unused_import
 
+import 'package:firebase_core/firebase_core.dart';
+import 'firebase_options.dart';
 import 'package:flutter/material.dart';
-import 'package:sanberappflutter/Tugas/Tugas12/get_data.dart';
+import 'package:sanberappflutter/Tugas/Tugas13/Tugas13_2/LoginScreen.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(const MyApp());
 }
 
@@ -19,7 +25,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const GetDataScreen(),
+      home: const LoginScreen(),
     );
   }
 }
