@@ -7,6 +7,8 @@ import 'package:sanberappflutter/Tugas/Tugas14/Tugas14_1/Obx/home.dart';
 import 'package:sanberappflutter/Tugas/Tugas14/get_data_screen.dart';
 import 'firebase_options.dart';
 import 'package:flutter/material.dart';
+import 'package:sanberappflutter/Tugas/Tugas15/pages/page_1.dart';
+import 'package:sanberappflutter/Tugas/Tugas15/routes/page_routes.dart';
 
 // Future<void> main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
@@ -32,7 +34,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: const PageOne(),
+      getPages: pageRouteApp.pages,
     );
   }
 }
